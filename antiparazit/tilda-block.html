@@ -1,0 +1,1417 @@
+<meta charset="utf-8">
+<!-- ============================================================
+     АНТИПАРАЗИТАРНЫЙ КУРС ЮЛИИ СУРМИНОЙ
+     Код для вставки в Тильду (блок T123 «HTML-код»)
+     Картинки грузятся из GitHub-репозитория d4i4ik-dev/-
+
+     КАК ИСПОЛЬЗОВАТЬ:
+     1. Создайте в Тильде пустую страницу.
+     2. Добавьте блок «Другое → T123 HTML-код».
+     3. Вставьте в него ВЕСЬ этот файл целиком.
+     4. В настройках блока: ширина 100%, отступы сверху/снизу 0.
+     5. В редакторе Тильды блок может выглядеть криво — это нормально.
+        Нажмите «Опубликовать» и смотрите готовую страницу.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+
+  .ap {
+    --ap-bg: #06150f;
+    --ap-bg2: #020a06;
+    --ap-card: #0d1f17;
+    --ap-gold: #d7b16a;
+    --ap-gold-mid: #cfab6d;
+    --ap-cream: #f2eade;
+    --ap-muted: #aba397;
+    --ap-dark: #040e09;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    background: var(--ap-bg);
+    color: var(--ap-cream);
+    line-height: 1.5;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .ap *, .ap *::before, .ap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .ap img { display: block; max-width: 100%; }
+  .ap a { text-decoration: none; color: inherit; }
+  .ap ul { list-style: none; }
+  .ap em { font-style: italic; color: var(--ap-gold); }
+  .ap h1, .ap h2, .ap h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+  .ap ::selection { background: rgba(207,171,109,.3); color: var(--ap-cream); }
+
+  .ap-wrap   { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .ap-wrap-6 { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+  .ap-wrap-5 { max-width: 1024px; margin: 0 auto; padding: 0 24px; }
+  .ap-wrap-4 { max-width: 896px;  margin: 0 auto; padding: 0 24px; }
+  .ap-wrap-3 { max-width: 768px;  margin: 0 auto; padding: 0 24px; }
+  @media (min-width: 1024px) {
+    .ap-wrap, .ap-wrap-6, .ap-wrap-5, .ap-wrap-4, .ap-wrap-3 { padding: 0 40px; }
+  }
+
+  .ap-eyebrow {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .32em;
+    color: var(--ap-gold); margin-bottom: 24px;
+  }
+  .ap-h2 { font-size: 36px; line-height: 1.15; }
+  @media (min-width: 768px) { .ap-h2 { font-size: 48px; } }
+  .ap-lead { margin-top: 24px; font-size: 16px; line-height: 1.65; color: var(--ap-muted); }
+  @media (min-width: 768px) { .ap-lead { font-size: 18px; } }
+  .ap-center { text-align: center; }
+  .ap-head { max-width: 768px; margin: 0 auto; text-align: center; }
+
+  .ap-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(207,171,109,.6), transparent); }
+  .ap-grad-emerald { background: linear-gradient(180deg, #06150f, #020a06); }
+  .ap-bg-flat { background: var(--ap-bg); }
+
+  .ap-section { padding: 96px 0; }
+  @media (min-width: 768px) { .ap-section { padding: 128px 0; } }
+
+  /* ---------- Кнопки ---------- */
+  .ap-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    border-radius: 9999px; padding: 16px 32px;
+    font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: .18em;
+    transition: all .3s ease; cursor: pointer;
+  }
+  .ap-btn svg { width: 16px; height: 16px; transition: transform .3s; }
+  .ap-btn:hover svg { transform: translateX(4px); }
+  .ap-btn-gold {
+    background: linear-gradient(135deg, #e2bf76, #c39553);
+    color: var(--ap-dark);
+    box-shadow: 0 20px 60px -20px rgba(207,171,109,.35);
+  }
+  .ap-btn-gold:hover { transform: scale(1.02); }
+  .ap-btn-outline { border: 1px solid rgba(215,177,106,.4); color: var(--ap-cream); }
+  .ap-btn-outline:hover { border-color: var(--ap-gold); color: var(--ap-gold); }
+
+  /* ---------- Шапка ---------- */
+  .ap-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    padding: 24px 0; transition: all .3s ease; background: transparent;
+  }
+  .ap-header.ap-scrolled {
+    background: rgba(6,21,15,.85);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(215,177,106,.15);
+    padding: 16px 0;
+  }
+  .ap-header-inner { display: flex; align-items: center; justify-content: space-between; }
+  .ap-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; color: var(--ap-cream); }
+  @media (min-width: 768px) { .ap-logo { font-size: 20px; } }
+  .ap-nav { display: none; align-items: center; gap: 32px; font-size: 12px; text-transform: uppercase; letter-spacing: .22em; color: rgba(242,234,222,.8); }
+  @media (min-width: 768px) { .ap-nav { display: flex; } }
+  .ap-nav a:hover { color: var(--ap-gold); }
+  .ap-header-cta {
+    display: none; border: 1px solid rgba(215,177,106,.5); border-radius: 9999px;
+    padding: 8px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: .18em;
+    color: var(--ap-cream); transition: all .25s;
+  }
+  .ap-header-cta:hover { border-color: var(--ap-gold); background: var(--ap-gold); color: var(--ap-dark); }
+  @media (min-width: 640px) { .ap-header-cta { display: inline-flex; } }
+
+  /* ---------- Hero ---------- */
+  .ap-hero { position: relative; overflow: hidden; background: var(--ap-bg); }
+  .ap-hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at 50% 0%, rgba(207,171,109,.15), transparent 60%);
+  }
+  .ap-hero-inner { position: relative; padding-top: 112px; padding-bottom: 80px; }
+  @media (min-width: 768px) { .ap-hero-inner { padding-top: 144px; padding-bottom: 128px; } }
+  .ap-hero-grid { display: grid; gap: 56px; }
+  @media (min-width: 1024px) { .ap-hero-grid { grid-template-columns: 1.05fr 1fr; align-items: center; gap: 80px; } }
+  .ap-hero-tag { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; font-size: 12px; text-transform: uppercase; letter-spacing: .32em; color: var(--ap-gold); }
+  .ap-hero-tag::before { content: ""; display: inline-block; height: 1px; width: 40px; background: rgba(215,177,106,.6); }
+  .ap-h1 { font-size: 41px; line-height: 1.05; color: var(--ap-cream); }
+  @media (min-width: 768px) { .ap-h1 { font-size: 60px; } }
+  @media (min-width: 1024px) { .ap-h1 { font-size: 70px; } }
+  .ap-h1 em { font-weight: 300; }
+  .ap-hero-text { margin-top: 32px; max-width: 576px; font-size: 16px; line-height: 1.65; color: var(--ap-muted); }
+  @media (min-width: 768px) { .ap-hero-text { font-size: 18px; } }
+  .ap-hero-btns { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
+  @media (min-width: 640px) { .ap-hero-btns { flex-direction: row; align-items: center; gap: 20px; } }
+  .ap-frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 2px; box-shadow: 0 30px 80px -30px rgba(0,0,0,.6); }
+  .ap-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .ap-frame::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(215,177,106,.2); border-radius: 2px; pointer-events: none; }
+  .ap-frame-outer { position: relative; }
+  .ap-frame-outer::before { content: ""; position: absolute; inset: -12px; border: 1px solid rgba(215,177,106,.3); border-radius: 2px; pointer-events: none; }
+
+  .ap-stats { margin-top: 80px; }
+  @media (min-width: 768px) { .ap-stats { margin-top: 112px; } }
+  .ap-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; padding: 40px 0; }
+  @media (min-width: 768px) { .ap-stats-grid { grid-template-columns: repeat(4, 1fr); } }
+  .ap-stat { text-align: center; }
+  .ap-stat-v { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; color: var(--ap-gold); }
+  @media (min-width: 768px) { .ap-stat-v { font-size: 48px; } }
+  .ap-stat-l { margin-top: 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .24em; color: var(--ap-muted); }
+
+  /* ---------- Карточки симптомов ---------- */
+  .ap-cards-4 { margin-top: 64px; display: grid; gap: 24px; }
+  @media (min-width: 640px) { .ap-cards-4 { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .ap-cards-4 { grid-template-columns: repeat(4, 1fr); } }
+  .ap-card {
+    border: 1px solid rgba(215,177,106,.15); background: rgba(13,31,23,.4);
+    border-radius: 2px; padding: 28px; transition: border-color .3s;
+  }
+  .ap-card:hover { border-color: rgba(215,177,106,.4); }
+  .ap-card-ic {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(215,177,106,.3); color: var(--ap-gold); margin-bottom: 20px;
+  }
+  .ap-card-ic svg { width: 20px; height: 20px; }
+  .ap-card h3 { font-size: 20px; color: var(--ap-cream); }
+  .ap-card p { margin-top: 8px; font-size: 14px; line-height: 1.6; color: var(--ap-muted); }
+
+  /* ---------- Об авторе ---------- */
+  .ap-about-grid { display: grid; gap: 56px; }
+  @media (min-width: 1024px) { .ap-about-grid { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 80px; } }
+  .ap-portrait-wrap { position: relative; margin: 0 auto; width: 100%; max-width: 448px; }
+  @media (min-width: 1024px) { .ap-portrait-wrap { max-width: none; } }
+  .ap-deco-br, .ap-deco-tl { display: none; }
+  @media (min-width: 1024px) {
+    .ap-deco-br { display: block; position: absolute; bottom: -24px; right: -24px; width: 128px; height: 128px; border: 1px solid rgba(215,177,106,.4); }
+    .ap-deco-tl { display: block; position: absolute; top: -24px; left: -24px; width: 80px; height: 80px; border: 1px solid rgba(215,177,106,.4); }
+  }
+  .ap-about-name { font-size: 48px; color: var(--ap-cream); }
+  @media (min-width: 768px) { .ap-about-name { font-size: 60px; } }
+  @media (min-width: 1024px) { .ap-about-name { font-size: 72px; } }
+  .ap-about-divider { margin: 32px 0; max-width: 140px; }
+  .ap-creds { display: flex; flex-direction: column; gap: 16px; }
+  .ap-creds li { display: flex; align-items: flex-start; gap: 16px; font-size: 16px; line-height: 1.6; color: rgba(242,234,222,.9); }
+  .ap-creds li::before { content: ""; margin-top: 12px; height: 4px; width: 24px; flex-shrink: 0; background: var(--ap-gold); }
+  .ap-quote {
+    margin-top: 40px; border-left: 2px solid var(--ap-gold); padding-left: 24px;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-style: italic;
+    color: rgba(242,234,222,.8); line-height: 1.5;
+  }
+  @media (min-width: 768px) { .ap-quote { font-size: 20px; } }
+
+  /* ---------- Результаты (8 ячеек) ---------- */
+  .ap-bens { margin-top: 64px; display: grid; gap: 1px; background: rgba(215,177,106,.15); }
+  @media (min-width: 640px) { .ap-bens { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .ap-bens { grid-template-columns: repeat(4, 1fr); } }
+  .ap-ben { background: var(--ap-bg); padding: 32px; transition: background .3s; }
+  .ap-ben:hover { background: var(--ap-card); }
+  .ap-ben svg { width: 28px; height: 28px; color: var(--ap-gold); }
+  .ap-ben h3 { margin-top: 24px; font-size: 20px; color: var(--ap-cream); }
+  .ap-ben p { margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ap-muted); }
+
+  /* ---------- Программа (этапы) ---------- */
+  .ap-timeline { position: relative; margin-top: 80px; }
+  .ap-timeline::before {
+    content: ""; position: absolute; left: 32px; top: 8px; bottom: 8px; width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(215,177,106,.4), transparent);
+  }
+  @media (min-width: 768px) { .ap-timeline::before { left: 50%; } }
+  .ap-steps { display: flex; flex-direction: column; gap: 64px; }
+  .ap-step { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 24px; }
+  @media (min-width: 768px) { .ap-step { grid-template-columns: 1fr 1fr; gap: 64px; } }
+  .ap-step-num-wrap { position: relative; }
+  @media (min-width: 768px) { .ap-step-num-wrap { display: flex; align-items: flex-start; justify-content: flex-end; } }
+  .ap-step-num {
+    position: relative; z-index: 10; display: flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(215,177,106,.4);
+    background: var(--ap-bg); font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px; color: var(--ap-gold);
+  }
+  @media (min-width: 768px) { .ap-step-num { width: 80px; height: 80px; font-size: 30px; } }
+  .ap-step-body { padding-top: 8px; }
+  .ap-step-body h3 { font-size: 24px; color: var(--ap-cream); }
+  @media (min-width: 768px) { .ap-step-body h3 { font-size: 30px; } }
+  .ap-step-body .ap-step-text { margin-top: 12px; font-size: 16px; line-height: 1.65; color: var(--ap-muted); }
+  .ap-step-result { margin-top: 16px; font-size: 14px; text-transform: uppercase; letter-spacing: .18em; color: var(--ap-gold); }
+  @media (min-width: 768px) {
+    .ap-step-rev .ap-step-num-wrap { order: 2; justify-content: flex-start; }
+    .ap-step-rev .ap-step-body { order: 1; text-align: right; }
+  }
+  .ap-final-block {
+    margin-top: 80px; border: 1px solid rgba(215,177,106,.25); background: rgba(13,31,23,.4);
+    border-radius: 2px; padding: 32px; text-align: center;
+  }
+  @media (min-width: 768px) { .ap-final-block { padding: 48px; } }
+  .ap-final-block h3 { margin-top: 16px; font-size: 24px; color: var(--ap-cream); }
+  @media (min-width: 768px) { .ap-final-block h3 { font-size: 30px; } }
+  .ap-final-block p.ap-fb-text { margin: 16px auto 0; max-width: 672px; font-size: 16px; line-height: 1.65; color: var(--ap-muted); }
+
+  /* ---------- Отзывы ---------- */
+  .ap-reviews { margin-top: 64px; display: grid; gap: 24px; }
+  @media (min-width: 768px) { .ap-reviews { grid-template-columns: 1fr 1fr; } }
+  .ap-review {
+    position: relative; border: 1px solid rgba(215,177,106,.15); background: rgba(13,31,23,.4);
+    border-radius: 2px; padding: 32px;
+  }
+  @media (min-width: 768px) { .ap-review { padding: 40px; } }
+  .ap-review > svg { position: absolute; right: 24px; top: 24px; width: 32px; height: 32px; color: rgba(215,177,106,.25); }
+  .ap-review blockquote {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-style: italic;
+    line-height: 1.6; color: rgba(242,234,222,.9);
+  }
+  @media (min-width: 768px) { .ap-review blockquote { font-size: 20px; } }
+  .ap-review figcaption { margin-top: 24px; display: flex; align-items: center; gap: 12px; }
+  .ap-review figcaption::before { content: ""; height: 1px; width: 32px; background: var(--ap-gold); }
+  .ap-review figcaption span { font-size: 14px; text-transform: uppercase; letter-spacing: .2em; color: var(--ap-gold); }
+  .ap-reviews-note { margin-top: 48px; text-align: center; font-size: 14px; text-transform: uppercase; letter-spacing: .28em; color: var(--ap-muted); }
+  .ap-reviews-note b { color: var(--ap-gold); font-weight: 400; }
+
+  /* ---------- Тарифы ---------- */
+  .ap-plans { margin-top: 64px; display: grid; gap: 32px; }
+  @media (min-width: 1024px) { .ap-plans { grid-template-columns: 1fr 1fr; } }
+  .ap-plan {
+    position: relative; display: flex; flex-direction: column;
+    border: 1px solid rgba(215,177,106,.2); background: rgba(13,31,23,.4);
+    border-radius: 2px; padding: 32px;
+  }
+  @media (min-width: 768px) { .ap-plan { padding: 40px; } }
+  .ap-plan-featured {
+    border: 2px solid var(--ap-gold); background: rgba(13,31,23,.6);
+    box-shadow: 0 20px 60px -20px rgba(207,171,109,.35);
+  }
+  .ap-plan-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, #e2bf76, #c39553); color: var(--ap-dark);
+    padding: 6px 16px; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .28em;
+    white-space: nowrap;
+  }
+  .ap-plan-tier { font-size: 12px; text-transform: uppercase; letter-spacing: .28em; color: var(--ap-muted); }
+  .ap-plan-tier-gold { color: var(--ap-gold); }
+  .ap-plan h3 { margin-top: 12px; font-size: 30px; color: var(--ap-cream); }
+  @media (min-width: 768px) { .ap-plan h3 { font-size: 36px; } }
+  .ap-plan-desc { margin-top: 12px; font-size: 14px; line-height: 1.6; color: var(--ap-muted); }
+  .ap-plan .ap-divider { margin: 32px 0; }
+  .ap-feats { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+  .ap-feats li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: rgba(242,234,222,.9); }
+  .ap-feats li svg { margin-top: 2px; width: 16px; height: 16px; flex-shrink: 0; color: var(--ap-gold); }
+  .ap-feats li.ap-feat-gold span { font-style: italic; color: var(--ap-gold); }
+  .ap-plan-bottom { margin-top: auto; }
+  .ap-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 24px; }
+  .ap-price b { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 48px; color: var(--ap-cream); }
+  .ap-price-gold b { color: var(--ap-gold); }
+  .ap-price span { font-size: 16px; color: var(--ap-muted); }
+  .ap-plan .ap-btn { width: 100%; }
+  .ap-consult { margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 12px; color: var(--ap-muted); }
+  .ap-consult .ap-consult-q { display: flex; align-items: center; gap: 6px; }
+  .ap-consult .ap-consult-q svg { width: 12px; height: 12px; color: var(--ap-gold); }
+  .ap-consult-links { display: flex; align-items: center; gap: 12px; }
+  .ap-consult-links a { color: rgba(242,234,222,.8); transition: color .25s; }
+  .ap-consult-links a:hover { color: var(--ap-gold); text-decoration: underline; text-underline-offset: 4px; }
+  .ap-consult-links i { color: rgba(215,177,106,.4); font-style: normal; }
+
+  .ap-guarantees {
+    margin-top: 64px; display: grid; gap: 24px 32px;
+    border: 1px solid rgba(215,177,106,.15); background: rgba(13,31,23,.3);
+    border-radius: 2px; padding: 32px; text-align: center;
+  }
+  @media (min-width: 640px) { .ap-guarantees { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .ap-guarantees { grid-template-columns: repeat(4, 1fr); } }
+  .ap-guarantee { font-size: 14px; color: rgba(242,234,222,.85); }
+  .ap-guarantee svg { margin: 0 auto 8px; display: block; width: 16px; height: 16px; color: var(--ap-gold); }
+
+  /* ---------- FAQ ---------- */
+  .ap-faq { margin-top: 56px; }
+  .ap-faq details { border-bottom: 1px solid rgba(215,177,106,.15); }
+  .ap-faq summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 24px 0; cursor: pointer; list-style: none;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; color: var(--ap-cream);
+    transition: color .25s; text-align: left;
+  }
+  @media (min-width: 768px) { .ap-faq summary { font-size: 20px; } }
+  .ap-faq summary::-webkit-details-marker { display: none; }
+  .ap-faq summary:hover { color: var(--ap-gold); }
+  .ap-faq summary::after {
+    content: ""; flex-shrink: 0; width: 16px; height: 16px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%23d7b16a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>') no-repeat center / contain;
+    transition: transform .25s;
+  }
+  .ap-faq details[open] summary::after { transform: rotate(180deg); }
+  .ap-faq .ap-answer { padding-bottom: 24px; font-size: 16px; line-height: 1.65; color: var(--ap-muted); }
+
+  /* ---------- Финальный призыв ---------- */
+  .ap-cta { position: relative; overflow: hidden; }
+  .ap-cta-bg { position: absolute; inset: 0; }
+  .ap-cta-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .3; }
+  .ap-cta-bg::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, #06150f, rgba(6,21,15,.85), #06150f);
+  }
+  .ap-cta-inner { position: relative; padding: 112px 0; text-align: center; }
+  @media (min-width: 768px) { .ap-cta-inner { padding: 160px 0; } }
+  .ap-cta-h { font-size: 36px; line-height: 1.15; color: var(--ap-cream); }
+  @media (min-width: 768px) { .ap-cta-h { font-size: 60px; } }
+  .ap-cta-text { margin: 32px auto 0; max-width: 672px; font-size: 16px; line-height: 1.65; color: rgba(242,234,222,.8); }
+  @media (min-width: 768px) { .ap-cta-text { font-size: 18px; } }
+  .ap-cta-btns { margin-top: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+  @media (min-width: 640px) { .ap-cta-btns { flex-direction: row; } }
+  .ap-cta-btns .ap-btn { width: 100%; }
+  @media (min-width: 640px) { .ap-cta-btns .ap-btn { width: auto; } }
+
+  /* ---------- Подвал ---------- */
+  .ap-footer { border-top: 1px solid rgba(215,177,106,.15); background: var(--ap-bg); padding: 56px 0; }
+  .ap-footer-grid { display: grid; gap: 40px; }
+  @media (min-width: 768px) { .ap-footer-grid { grid-template-columns: 1.5fr 1fr 1fr; } }
+  .ap-footer-brand { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: var(--ap-cream); }
+  .ap-footer-desc { margin-top: 12px; max-width: 384px; font-size: 14px; line-height: 1.6; color: var(--ap-muted); }
+  .ap-footer-h { margin-bottom: 16px; font-size: 12px; text-transform: uppercase; letter-spacing: .28em; color: var(--ap-gold); }
+  .ap-socials { display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
+  .ap-socials a { display: inline-flex; align-items: center; gap: 8px; color: rgba(242,234,222,.8); transition: color .25s; }
+  .ap-socials a:hover { color: var(--ap-gold); }
+  .ap-socials svg { width: 16px; height: 16px; }
+  .ap-requisites { font-size: 14px; line-height: 1.7; color: var(--ap-muted); }
+  .ap-copyright { margin-top: 24px; text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: .24em; color: var(--ap-muted); }
+  .ap-footer .ap-divider { margin-top: 48px; }
+
+  /* ---------- Появление при прокрутке ---------- */
+  .ap-reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .ap-reveal.ap-visible { opacity: 1; transform: translateY(0); }
+</style>
+
+<div class="ap">
+
+  <!-- Шапка -->
+  <header class="ap-header" id="ap-header">
+    <div class="ap-wrap ap-header-inner">
+      <a class="ap-logo" href="#ap-top">Юлия <em>Сурмина</em></a>
+      <nav class="ap-nav">
+        <a href="#ap-program">Программа</a>
+        <a href="#ap-pricing">Тарифы</a>
+      </nav>
+      <a class="ap-header-cta" href="#ap-pricing">Записаться</a>
+    </div>
+  </header>
+
+  <!-- Главный экран -->
+  <section class="ap-hero" id="ap-top">
+    <div class="ap-wrap ap-hero-inner">
+      <div class="ap-hero-grid">
+        <div>
+          <p class="ap-hero-tag">Авторская программа Юлии Сурминой</p>
+          <h1 class="ap-h1">Глубокая <em>перезагрузка</em> организма за 40 дней</h1>
+          <p class="ap-hero-text">
+            Поэтапное очищение пяти систем тела по натуропатии — кишечник, кровь, лимфа, печень, почки.
+            Без жёстких диет и таблеток, под личным сопровождением эксперта с 17-летним стажем.
+          </p>
+          <div class="ap-hero-btns">
+            <a class="ap-btn ap-btn-gold" href="#ap-pricing">Выбрать программу <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-arrow-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="ap-btn ap-btn-outline" href="#ap-program">Узнать подробнее</a>
+          </div>
+        </div>
+        <div class="ap-frame-outer">
+          <div class="ap-frame">
+            <img src="https://raw.githubusercontent.com/d4i4ik-dev/-/1da2abaf46a3d13ba2bc2af547bdd1231b6b203a/antiparazit/images/hero-herbs.jpg" alt="Натуропатические травы и эфирные масла на изумрудном фоне" width="900" height="1600">
+          </div>
+        </div>
+      </div>
+
+      <div class="ap-stats">
+        <div class="ap-divider"></div>
+        <div class="ap-stats-grid">
+          <div class="ap-stat"><div class="ap-stat-v">17</div><div class="ap-stat-l">лет практики</div></div>
+          <div class="ap-stat"><div class="ap-stat-v">7 000+</div><div class="ap-stat-l">исцелённых</div></div>
+          <div class="ap-stat"><div class="ap-stat-v">5</div><div class="ap-stat-l">систем очищения</div></div>
+          <div class="ap-stat"><div class="ap-stat-v">40</div><div class="ap-stat-l">дней программы</div></div>
+        </div>
+        <div class="ap-divider"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Проблема -->
+  <section class="ap-section ap-bg-flat">
+    <div class="ap-wrap-6 ap-reveal">
+      <div class="ap-head">
+        <p class="ap-eyebrow">Где вы сейчас</p>
+        <h2 class="ap-h2">Тело перестало <em>восстанавливаться</em> само</h2>
+        <p class="ap-lead">
+          Экология, переработанные продукты, медикаменты, хронический стресс — органы выделения уже
+          не справляются. Симптомы накапливаются, и привычные средства перестают работать.
+        </p>
+      </div>
+      <div class="ap-cards-4">
+        <div class="ap-card">
+          <div class="ap-card-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-battery"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M 22 14 L 22 10" />
+  <rect x="2" y="6" width="16" height="12" rx="2" /></svg></div>
+          <h3>Хроническая усталость</h3>
+          <p>Просыпаетесь разбитой даже после 8 часов сна</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-card-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-scale"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3v18" />
+  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" />
+  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M7 21h10" /></svg></div>
+          <h3>Лишний вес и отёки</h3>
+          <p>Тело перестало откликаться на привычные методы</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-card-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-sparkles"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" /></svg></div>
+          <h3>Кожа и волосы</h3>
+          <p>Высыпания, тусклый цвет лица, выпадение волос</p>
+        </div>
+        <div class="ap-card">
+          <div class="ap-card-ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-brain"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 18V5" />
+  <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />
+  <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />
+  <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+  <path d="M18 18a4 4 0 0 0 2-7.464" />
+  <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
+  <path d="M6 18a4 4 0 0 1-2-7.464" />
+  <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" /></svg></div>
+          <h3>Туман в голове</h3>
+          <p>Падает концентрация, перепады настроения, раздражительность</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Об авторе -->
+  <section class="ap-section ap-grad-emerald">
+    <div class="ap-wrap ap-reveal">
+      <div class="ap-about-grid">
+        <div class="ap-portrait-wrap">
+          <div class="ap-frame">
+            <img src="https://raw.githubusercontent.com/d4i4ik-dev/-/1da2abaf46a3d13ba2bc2af547bdd1231b6b203a/antiparazit/images/julia-portrait.jpg" alt="Юлия Сурмина — эксперт по натуропатии" loading="lazy" width="1000" height="1500">
+          </div>
+          <div class="ap-deco-br"></div>
+          <div class="ap-deco-tl"></div>
+        </div>
+        <div>
+          <p class="ap-eyebrow">Автор программы</p>
+          <h2 class="ap-about-name">Юлия <em>Сурмина</em></h2>
+          <div class="ap-divider ap-about-divider"></div>
+          <ul class="ap-creds">
+            <li><span>Эксперт по натуропатии</span></li>
+            <li><span>Практикующий натуропат-нутрициолог</span></li>
+            <li><span>Личный тренер с 17-летним стажем</span></li>
+            <li><span>Автор протоколов исцеления от аллергии, диабета и так называемых «неизлечимых» болезней</span></li>
+            <li><span>Сертифицированный энергопрактик: Тетахилер и мастер Рейки</span></li>
+            <li><span>Помогла более 7 000 детям и взрослым</span></li>
+          </ul>
+          <blockquote class="ap-quote">
+            «Я не убираю симптомы — я работаю с причиной. Когда тело очищено и поддержано
+            природными протоколами, оно само возвращается к норме».
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Результаты -->
+  <section class="ap-section ap-bg-flat">
+    <div class="ap-wrap ap-reveal">
+      <div class="ap-head">
+        <p class="ap-eyebrow">Что меняется</p>
+        <h2 class="ap-h2">Восемь измеримых <em>результатов</em> курса</h2>
+        <p class="ap-lead">Изменения становятся заметны уже на первой неделе и закрепляются по мере прохождения программы.</p>
+      </div>
+      <div class="ap-bens">
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-scale"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3v18" />
+  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" />
+  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M7 21h10" /></svg><h3>Нормализация веса</h3><p>Минус 10–15 кг в профиците или восстановление ресурса при дефиците</p></div>
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-leaf"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" /></svg><h3>Пищеварение</h3><p>Уходят вздутие, газообразование, восстанавливается перистальтика</p></div>
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg><h3>Уровень энергии</h3><p>Возвращается работоспособность и ясность с самого утра</p></div>
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-shield"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></svg><h3>Сильный иммунитет</h3><p>Снижается нагрузка, тело само справляется с инфекциями</p></div>
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-sparkles"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" /></svg><h3>Состояние кожи</h3><p>Уходят высыпания, кожа становится упругой и ровной</p></div>
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-flame"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" /></svg><h3>Снятие воспалений</h3><p>Хроническое воспаление уменьшается, уходят боли</p></div>
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-heart"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg><h3>Эмоциональный фон</h3><p>Уходит раздражительность, возвращается спокойствие</p></div>
+        <div class="ap-ben"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-brain"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 18V5" />
+  <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />
+  <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />
+  <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+  <path d="M18 18a4 4 0 0 0 2-7.464" />
+  <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
+  <path d="M6 18a4 4 0 0 1-2-7.464" />
+  <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" /></svg><h3>Когнитивные функции</h3><p>Лучше концентрация, память, исчезает «туман в голове»</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Программа -->
+  <section class="ap-section ap-grad-emerald" id="ap-program">
+    <div class="ap-wrap-5 ap-reveal">
+      <div class="ap-head">
+        <p class="ap-eyebrow">Программа</p>
+        <h2 class="ap-h2">Пять этапов <em>глубокого</em> очищения</h2>
+        <p class="ap-lead">
+          Каждый этап завершается до начала следующего. Юлия и куратор сопровождают вас
+          на всём пути, корректируя протокол под ваше состояние.
+        </p>
+      </div>
+
+      <div class="ap-timeline">
+        <div class="ap-steps">
+          <div class="ap-step">
+            <div class="ap-step-num-wrap"><div class="ap-step-num">I</div></div>
+            <div class="ap-step-body">
+              <h3>Очищение кишечника</h3>
+              <p class="ap-step-text">Восстановление микрофлоры, перистальтики, вывод токсинов.</p>
+              <p class="ap-step-result">Лёгкость, плоский живот, первые −3–5 кг</p>
+            </div>
+          </div>
+          <div class="ap-step ap-step-rev">
+            <div class="ap-step-num-wrap"><div class="ap-step-num">II</div></div>
+            <div class="ap-step-body">
+              <h3>Очищение крови</h3>
+              <p class="ap-step-text">Нормализация давления, освобождение от метаболических токсинов.</p>
+              <p class="ap-step-result">Стабильное давление, прилив энергии</p>
+            </div>
+          </div>
+          <div class="ap-step">
+            <div class="ap-step-num-wrap"><div class="ap-step-num">III</div></div>
+            <div class="ap-step-body">
+              <h3>Очищение лимфы</h3>
+              <p class="ap-step-text">Запуск лимфооттока, снятие застойных процессов.</p>
+              <p class="ap-step-result">Уходят отёки, чёткий овал лица</p>
+            </div>
+          </div>
+          <div class="ap-step ap-step-rev">
+            <div class="ap-step-num-wrap"><div class="ap-step-num">IV</div></div>
+            <div class="ap-step-body">
+              <h3>Очищение печени</h3>
+              <p class="ap-step-text">Снятие нагрузки, работа с желчным, восстановление функции.</p>
+              <p class="ap-step-result">Уходят головные боли, чистая кожа</p>
+            </div>
+          </div>
+          <div class="ap-step">
+            <div class="ap-step-num-wrap"><div class="ap-step-num">V</div></div>
+            <div class="ap-step-body">
+              <h3>Очищение почек</h3>
+              <p class="ap-step-text">Бережная разгрузка, снятие воспалений мочевыделительной системы.</p>
+              <p class="ap-step-result">Уходит тяжесть в пояснице, ровный цвет лица</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ap-final-block">
+        <p class="ap-eyebrow" style="margin-bottom:0;">Финал</p>
+        <h3>Перезагрузка и поддержка</h3>
+        <p class="ap-fb-text">
+          После пяти этапов — закрепление баланса через питание, растительные комплексы
+          и индивидуальные корректировки. Все материалы остаются у вас навсегда.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section class="ap-section ap-bg-flat">
+    <div class="ap-wrap ap-reveal">
+      <div class="ap-head">
+        <p class="ap-eyebrow">Те, кто прошёл</p>
+        <h2 class="ap-h2">Истории <em>трансформации</em></h2>
+      </div>
+      <div class="ap-reviews">
+        <figure class="ap-review">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-quote"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+  <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" /></svg>
+          <blockquote>«Я пришла к Юле после диагноза дисплазия III степени и предупреждения «следующая стадия — рак». Прохожу курс каждые полгода, и уже два года все анализы чистые. Ушли ВПЧ, хронический герпес, ангина и мигрени.»</blockquote>
+          <figcaption><span>Татьяна, 44 лет</span></figcaption>
+        </figure>
+        <figure class="ap-review">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-quote"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+  <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" /></svg>
+          <blockquote>«Сегодня встала на весы — была 86,6, стала 68,7. Чувствую себя отлично. Юля и Аня дали инструменты для работы с головой и здоровьем — теперь это моя осознанная норма.»</blockquote>
+          <figcaption><span>Анна, 36 лет</span></figcaption>
+        </figure>
+        <figure class="ap-review">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-quote"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+  <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" /></svg>
+          <blockquote>«Очищение прошло колоссальное. Кожа стала чище, ушёл отёк, перестали выпадать волосы, минус 6 кг. Цикл стал безболезненный. Это первый онлайн-курс, который я прошла до конца — и продолжаю поддерживать.»</blockquote>
+          <figcaption><span>Марина, 39 лет</span></figcaption>
+        </figure>
+        <figure class="ap-review">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-quote"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+  <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" /></svg>
+          <blockquote>«У меня перестали выпадать волосы — год до этого ничего не помогало. Кожа лица и тела стала очень нежной и гладкой. Юля, спасибо за программу.»</blockquote>
+          <figcaption><span>Ангелина, 27 лет</span></figcaption>
+        </figure>
+      </div>
+      <p class="ap-reviews-note">Более <b>7 000</b> женщин прошли курс</p>
+    </div>
+  </section>
+
+  <!-- Тарифы -->
+  <section class="ap-section ap-grad-emerald" id="ap-pricing">
+    <div class="ap-wrap-6 ap-reveal">
+      <div class="ap-head">
+        <p class="ap-eyebrow">Тарифы</p>
+        <h2 class="ap-h2">Выберите свой <em>формат</em> участия</h2>
+        <p class="ap-lead">
+          Оба тарифа включают личное сопровождение Юлии и куратора. Все материалы остаются
+          у вас навсегда — программу можно пройти повторно.
+        </p>
+      </div>
+
+      <div class="ap-plans">
+        <div class="ap-plan">
+          <div>
+            <p class="ap-plan-tier">Тариф I</p>
+            <h3>Старт</h3>
+            <p class="ap-plan-desc">Для тех, кто впервые входит в авторскую методику. Базовое очищение и закладка фундамента.</p>
+          </div>
+          <div class="ap-divider"></div>
+          <ul class="ap-feats">
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Очищение кишечника</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Регуляция лимфооттока</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Коррекция питания</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Комплексы для тела</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Массажные техники для лица</span></li>
+          </ul>
+          <div class="ap-plan-bottom">
+            <div class="ap-price"><b>45 000</b><span>₽</span></div>
+            <a class="ap-btn ap-btn-outline" href="https://payform.ru/bebkgGd/" target="_blank" rel="noopener noreferrer">Оплатить <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-arrow-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></svg></a>
+            <div class="ap-consult">
+              <span class="ap-consult-q"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-message-circle"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg> Нужна консультация?</span>
+              <div class="ap-consult-links">
+                <a href="https://t.me/Dary_chik?text=%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%B2%D0%B7%D1%80%D0%BE%D1%81%D0%BB%D0%BE%D0%BC%D1%83%20%D0%BA%D1%83%D1%80%D1%81%D1%83%20%E2%80%94%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%20%C2%AB%D0%A1%D1%82%D0%B0%D1%80%D1%82%C2%BB" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <i>·</i>
+                <a href="https://max.ru/u/f9LHodD0cOJyC4WdqZ5BOhTIrEcS-HekiI-m79Akg4IMdd38MlRQeIx413w" target="_blank" rel="noopener noreferrer">MAX</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ap-plan ap-plan-featured">
+          <div class="ap-plan-badge">Рекомендуем</div>
+          <div>
+            <p class="ap-plan-tier ap-plan-tier-gold">Тариф II</p>
+            <h3>Полная перезагрузка</h3>
+            <p class="ap-plan-desc">Для тех, кто готов к глубокой трансформации и работе со всеми системами тела.</p>
+          </div>
+          <div class="ap-divider"></div>
+          <ul class="ap-feats">
+            <li class="ap-feat-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Всё, что входит в «Старт»</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Авторский справочник здоровья</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Очищение печени, почек, крови</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Работа с желчным пузырём</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Противогрибковый протокол</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Индивидуальные рекомендации</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Коррекция женских болезней</span></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg><span>Работа с аллергией и воспалениями</span></li>
+          </ul>
+          <div class="ap-plan-bottom">
+            <div class="ap-price ap-price-gold"><b>69 500</b><span>₽</span></div>
+            <a class="ap-btn ap-btn-gold" href="https://payform.ru/d7bkgHa/" target="_blank" rel="noopener noreferrer">Оплатить <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-arrow-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></svg></a>
+            <div class="ap-consult">
+              <span class="ap-consult-q"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-message-circle"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg> Нужна консультация?</span>
+              <div class="ap-consult-links">
+                <a href="https://t.me/Dary_chik?text=%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%B2%D0%B7%D1%80%D0%BE%D1%81%D0%BB%D0%BE%D0%BC%D1%83%20%D0%BA%D1%83%D1%80%D1%81%D1%83%20%E2%80%94%20%D1%82%D0%B0%D1%80%D0%B8%D1%84%20%C2%AB%D0%9F%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%C2%BB" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <i>·</i>
+                <a href="https://max.ru/u/f9LHodD0cOJyC4WdqZ5BOhTIrEcS-HekiI-m79Akg4IMdd38MlRQeIx413w" target="_blank" rel="noopener noreferrer">MAX</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ap-guarantees">
+        <div class="ap-guarantee"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg>100% натуральные компоненты</div>
+        <div class="ap-guarantee"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg>Личное сопровождение Юлии и куратора</div>
+        <div class="ap-guarantee"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg>Материалы остаются навсегда</div>
+        <div class="ap-guarantee"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 6 9 17l-5-5" /></svg>Гарантия возврата средств</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Вопросы -->
+  <section class="ap-section ap-bg-flat">
+    <div class="ap-wrap-3 ap-reveal">
+      <div class="ap-head">
+        <p class="ap-eyebrow">Вопросы</p>
+        <h2 class="ap-h2">Что важно <em>знать заранее</em></h2>
+      </div>
+      <div class="ap-faq">
+        <details>
+          <summary>Сколько длится программа и можно ли пройти её повторно?</summary>
+          <p class="ap-answer">Полная перезагрузка проходит в течение 40 дней с поэтапным сопровождением. Все материалы остаются у вас навсегда — вы можете повторять программу самостоятельно столько раз, сколько потребуется.</p>
+        </details>
+        <details>
+          <summary>Каких результатов мне ожидать?</summary>
+          <p class="ap-answer">Снижение веса на 10–15 кг при профиците, нормализация давления, уход головных болей и отёков, улучшение состояния кожи, рост уровня энергии, восстановление работы внутренних органов.</p>
+        </details>
+        <details>
+          <summary>На чём построена программа?</summary>
+          <p class="ap-answer">На натуральных природных компонентах — растительных протоколах, проверенных в натуропатии. Никакой химической фарминдустрии. Цель — убрать причину, а не подавить симптом.</p>
+        </details>
+        <details>
+          <summary>Кто меня сопровождает?</summary>
+          <p class="ap-answer">Юлия Сурмина и личный куратор. На каждом этапе вы получаете обратную связь, корректировки протокола под ваше состояние и поддержку в закрытом пространстве.</p>
+        </details>
+        <details>
+          <summary>Что будет после окончания курса?</summary>
+          <p class="ap-answer">Все материалы остаются у вас. Вы можете повторно проходить программу самостоятельно или обратиться за дополнительной консультацией.</p>
+        </details>
+        <details>
+          <summary>Как происходит оплата и есть ли гарантии?</summary>
+          <p class="ap-answer">Оплата через защищённую платёжную систему по кнопке выбранного тарифа. Мы предоставляем гарантию возврата средств, если вы не получили заявленных результатов при условии прохождения программы.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Финальный призыв -->
+  <section class="ap-cta">
+    <div class="ap-cta-bg">
+      <img src="https://raw.githubusercontent.com/d4i4ik-dev/-/1da2abaf46a3d13ba2bc2af547bdd1231b6b203a/antiparazit/images/cta-botanical.jpg" alt="" loading="lazy">
+    </div>
+    <div class="ap-wrap-4 ap-cta-inner ap-reveal">
+      <p class="ap-eyebrow">Начните перезагрузку</p>
+      <h2 class="ap-cta-h">Тело знает, как восстанавливаться. <br><em>Ему просто нужно помочь.</em></h2>
+      <p class="ap-cta-text">
+        Присоединяйтесь к программе и пройдите путь под личным сопровождением натуропата с
+        17-летним стажем.
+      </p>
+      <div class="ap-cta-btns">
+        <a class="ap-btn ap-btn-outline" href="https://payform.ru/bebkgGd/" target="_blank" rel="noopener noreferrer">Старт · 45 000 ₽ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-arrow-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></svg></a>
+        <a class="ap-btn ap-btn-gold" href="https://payform.ru/d7bkgHa/" target="_blank" rel="noopener noreferrer">Полная перезагрузка · 69 500 ₽ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-arrow-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer class="ap-footer">
+    <div class="ap-wrap">
+      <div class="ap-footer-grid">
+        <div>
+          <p class="ap-footer-brand">Юлия <em>Сурмина</em></p>
+          <p class="ap-footer-desc">
+            Натуропат-нутрициолог. Авторские программы перезагрузки организма
+            на природных протоколах.
+          </p>
+        </div>
+        <div>
+          <p class="ap-footer-h">Соцсети</p>
+          <ul class="ap-socials">
+            <li><a href="https://www.instagram.com/yliya_surmina" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> Instagram</a></li>
+            <li><a href="https://t.me/Dary_chik" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-send"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" /></svg> Telegram</a></li>
+            <li><a href="https://wa.me/79884129636" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-message-circle"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg> WhatsApp</a></li>
+            <li><a href="https://max.ru/u/f9LHodD0cOJyC4WdqZ5BOhTIrEcS-HekiI-m79Akg4IMdd38MlRQeIx413w" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.17.0 - ISC -->
+<svg
+  class="lucide lucide-message-circle"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg> MAX</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="ap-footer-h">Реквизиты</p>
+          <p class="ap-requisites">ИП Сурмин Павел Вадимович <br>ИНН 421812373040</p>
+        </div>
+      </div>
+      <div class="ap-divider"></div>
+      <p class="ap-copyright">© 2026 · Мудрость природы</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    // Шапка: фон при прокрутке
+    var header = document.getElementById('ap-header');
+    function onScroll() {
+      if (window.scrollY > 24) header.classList.add('ap-scrolled');
+      else header.classList.remove('ap-scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Плавное появление секций
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('ap-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.ap-reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.ap-reveal').forEach(function (el) { el.classList.add('ap-visible'); });
+    }
+
+    // FAQ: открыт только один вопрос
+    document.querySelectorAll('.ap-faq details').forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (item.open) {
+          document.querySelectorAll('.ap-faq details[open]').forEach(function (other) {
+            if (other !== item) other.open = false;
+          });
+        }
+      });
+    });
+  })();
+</script>
