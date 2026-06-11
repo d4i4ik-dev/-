@@ -82,13 +82,15 @@ export const Route = createRootRoute({
       { property: "og:title", content: "VIBE — Вайбкодинг для бизнеса | Сайты, приложения, AI-агенты" },
       { property: "og:description", content: "Умные веб-решения для вашего бизнеса. Сайты, приложения, AI-агенты, автоматизация. 7+ лет в бизнесе, 200+ проектов." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:url", content: "https://biznes-na-ai.ru/" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "VIBE — Вайбкодинг для бизнеса | Сайты, приложения, AI-агенты" },
       { name: "twitter:description", content: "Умные веб-решения для вашего бизнеса. Сайты, приложения, AI-агенты, автоматизация. 7+ лет в бизнесе, 200+ проектов." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d9021db6-fc40-41fd-a067-240a4637fd96/id-preview-1b77c8e6--4e99ebfd-a4ab-4f14-b3fa-773c4c75cbaa.lovable.app-1776867451607.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d9021db6-fc40-41fd-a067-240a4637fd96/id-preview-1b77c8e6--4e99ebfd-a4ab-4f14-b3fa-773c4c75cbaa.lovable.app-1776867451607.png" },
+      { property: "og:image", content: "https://biznes-na-ai.ru/og-image.png" },
+      { name: "twitter:image", content: "https://biznes-na-ai.ru/og-image.png" },
     ],
     links: [
+      { rel: "canonical", href: "https://biznes-na-ai.ru/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
