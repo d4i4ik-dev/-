@@ -219,11 +219,11 @@ function Result({ result }) {
         </a>
         <p className="fine-print">После самоаудита — скидка 50% на стратегический аудит</p>
         <p className="fine-print pay-note">
-          После оплаты напиши <strong>ОПЛАЧЕНО</strong> в личку{' '}
+          После оплаты напишите <strong>ОПЛАЧЕНО</strong> в Telegram{' '}
           <a className="pay-link" href="https://t.me/Dary_chik" target="_blank" rel="noopener noreferrer">
             @Dary_chik
           </a>{' '}
-          — пришлю доступ к аудиту в течение часа
+          — пришлю код доступа и ссылку на аудит в течение часа
         </p>
       </div>
     </main>
