@@ -1,0 +1,400 @@
+:root {
+  --bg: #0f0f0f;
+  --gold: #c9a84c;
+  --text: #f0ece4;
+  --card: #1a1a18;
+  --card-border: rgba(201, 168, 76, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+}
+
+h1,
+h2,
+.result-headline,
+.cta-title {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ---------- Анимации ---------- */
+
+.fade-in {
+  animation: fadeIn 0.45s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Общее ---------- */
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: #0f0f0f;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 36px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 32px rgba(201, 168, 76, 0.25);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.4);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.fine-print {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+/* ---------- Экран 0: Лендинг ---------- */
+
+.landing {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.landing-title {
+  font-size: clamp(36px, 7vw, 56px);
+  font-weight: 600;
+  line-height: 1.12;
+  margin-bottom: 20px;
+}
+
+.landing-title em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.landing-sub {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+
+/* ---------- Экраны 1–5: Вопросы ---------- */
+
+.question {
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.btn-back:hover {
+  color: var(--gold);
+}
+
+.progress-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.progress-bar {
+  height: 4px;
+  background: rgba(240, 236, 228, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.question-text {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 32px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.option-btn {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  border-radius: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--gold);
+  background: #211e16;
+  transform: translateX(4px);
+}
+
+.option-btn.selected {
+  border-color: var(--gold);
+  background: #262017;
+}
+
+/* ---------- Экран 6: Анализ ---------- */
+
+.analyzing {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.pulse-ring {
+  width: 96px;
+  height: 96px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ring 1.6s ease-in-out infinite;
+  margin-bottom: 36px;
+}
+
+.pulse-core {
+  width: 40px;
+  height: 40px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: core 1.6s ease-in-out infinite;
+}
+
+@keyframes ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes core {
+  0%,
+  100% {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.analyzing-text {
+  font-size: 20px;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease both;
+}
+
+/* ---------- Экран 7: Результат + CTA ---------- */
+
+.result {
+  padding-top: 64px;
+}
+
+.result-headline {
+  font-size: clamp(28px, 6vw, 42px);
+  font-weight: 600;
+  line-height: 1.18;
+  margin-bottom: 36px;
+}
+
+.zones {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.zone-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  animation: fadeIn 0.5s ease both;
+}
+
+.zone-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.zone-dot {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.zone-pain {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.teaser {
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.6;
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+  margin-bottom: 44px;
+}
+
+.cta-block {
+  background: linear-gradient(160deg, #1c1812, #14120d);
+  border: 1px solid var(--gold);
+  border-radius: 18px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 16px 64px rgba(201, 168, 76, 0.12);
+}
+
+.cta-title {
+  font-size: clamp(26px, 5vw, 34px);
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.cta-list {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 16px;
+  margin-bottom: 26px;
+}
+
+.cta-price {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 22px;
+}
+
+.cta-btn {
+  width: 100%;
+  max-width: 380px;
+  font-size: 18px;
+  padding: 20px 28px;
+}
+
+/* ---------- Мобильная адаптация ---------- */
+
+@media (max-width: 480px) {
+  .screen {
+    padding: 36px 16px 48px;
+  }
+
+  .btn-gold {
+    width: 100%;
+  }
+
+  .landing-sub {
+    font-size: 16px;
+  }
+
+  .option-btn {
+    font-size: 15px;
+    padding: 16px 16px;
+  }
+
+  .cta-block {
+    padding: 28px 18px;
+  }
+}
