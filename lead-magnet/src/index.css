@@ -374,6 +374,22 @@ h2,
   padding: 20px 28px;
 }
 
+.pay-note {
+  margin-top: 10px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.pay-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pay-link:hover {
+  text-decoration: underline;
+}
+
 /* ---------- Мобильная адаптация ---------- */
 
 @media (max-width: 480px) {
