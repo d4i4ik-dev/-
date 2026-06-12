@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { QUESTIONS } from './questions.js'
 
-// Ссылка на трипваер. Параметры передают, что человек пришёл из лид-магнита.
-const TRIPWIRE_URL = '/tripwire?utm_source=lead-magnet&utm_medium=diagnostic&utm_campaign=free-audit'
+// Платёжная ссылка трипваера (ЮKassa). Открывается в новой вкладке.
+const TRIPWIRE_URL = 'https://yookassa.ru/my/i/aiwtL6QItk4c/l'
 
 const ANALYZE_PHRASES = ['Анализирую...', 'Ищу зоны потерь...', 'Готовлю результат...']
 const MIN_ANALYZE_MS = 3000
@@ -209,10 +209,22 @@ function Result({ result }) {
           <li>✓ План действий на 14 дней</li>
         </ul>
         <div className="cta-price">3 900 ₽</div>
-        <a className="btn-gold cta-btn" href={TRIPWIRE_URL}>
+        <a
+          className="btn-gold cta-btn"
+          href={TRIPWIRE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Получить полный разбор →
         </a>
         <p className="fine-print">После самоаудита — скидка 50% на стратегический аудит</p>
+        <p className="fine-print pay-note">
+          После оплаты напишите <strong>ОПЛАЧЕНО</strong> в Telegram{' '}
+          <a className="pay-link" href="https://t.me/Dary_chik" target="_blank" rel="noopener noreferrer">
+            @Dary_chik
+          </a>{' '}
+          — пришлю код доступа и ссылку на аудит в течение часа
+        </p>
       </div>
     </main>
   )
