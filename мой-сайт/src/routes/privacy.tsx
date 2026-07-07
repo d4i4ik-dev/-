@@ -4,35 +4,36 @@ import { SiteLayout } from "@/components/SiteLayout";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Политика конфиденциальности — VIBE" },
+      { title: "Политика конфиденциальности — Дарья Попельнюк" },
       { name: "description", content: "Правила сбора и обработки персональных данных." },
-      { property: "og:title", content: "Политика конфиденциальности — VIBE" },
+      { property: "og:title", content: "Политика конфиденциальности — Дарья Попельнюк" },
       { property: "og:description", content: "Правила сбора и обработки персональных данных." },
     ],
+    links: [{ rel: "canonical", href: "http://biznes-na-ai.ru/privacy" }],
   }),
   component: PrivacyPage,
 });
 
 function PrivacyPage() {
   return (
-    <SiteLayout>
-      <section className="page-hero lime">
-        <div className="container">
-          <div className="page-hero-label reveal">Юридическая информация</div>
-          <h1 className="reveal reveal-d1">Политика конфиденциальности</h1>
-          <p className="page-hero-sub reveal reveal-d2">
+    <SiteLayout accent="blue">
+      <section className="page-hero">
+        <div className="container narrow">
+          <div className="eyebrow">Юридическая информация</div>
+          <h1 className="h1">Политика конфиденциальности</h1>
+          <p className="lead">
             Правила сбора и обработки персональных данных.
           </p>
         </div>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="legal-wrapper reveal">
+        <div className="container narrow">
+          <div className="legal-wrapper">
             <p className="legal-intro">
               Настоящая Политика конфиденциальности персональных данных (далее — Политика) действует в
               отношении всей информации, которую ИП Попельнюк Дарья Сергеевна (далее — Оператор) может
-              получить о Пользователе во время использования сайта VIBE (далее — Сайт) и его сервисов.
+              получить о Пользователе во время использования сайта biznes-na-ai.ru (далее — Сайт) и его сервисов.
             </p>
 
             <h2>1. Общие положения</h2>

@@ -4,35 +4,36 @@ import { SiteLayout } from "@/components/SiteLayout";
 export const Route = createFileRoute("/oferta")({
   head: () => ({
     meta: [
-      { title: "Договор оферты — VIBE" },
-      { name: "description", content: "Публичная оферта на оказание IT-услуг, веб-разработки и консалтинга." },
-      { property: "og:title", content: "Договор оферты — VIBE" },
-      { property: "og:description", content: "Публичная оферта на оказание IT-услуг, веб-разработки и консалтинга." },
+      { title: "Договор оферты — Дарья Попельнюк" },
+      { name: "description", content: "Публичная оферта на оказание услуг по веб-разработке и цифровым инструментам." },
+      { property: "og:title", content: "Договор оферты — Дарья Попельнюк" },
+      { property: "og:description", content: "Публичная оферта на оказание услуг по веб-разработке и цифровым инструментам." },
     ],
+    links: [{ rel: "canonical", href: "http://biznes-na-ai.ru/oferta" }],
   }),
   component: OfertaPage,
 });
 
 function OfertaPage() {
   return (
-    <SiteLayout>
-      <section className="page-hero lime">
-        <div className="container">
-          <div className="page-hero-label reveal">Юридическая информация</div>
-          <h1 className="reveal reveal-d1">Публичная оферта</h1>
-          <p className="page-hero-sub reveal reveal-d2">
-            Договор на оказание IT-услуг, веб-разработки и консалтинга.
+    <SiteLayout accent="blue">
+      <section className="page-hero">
+        <div className="container narrow">
+          <div className="eyebrow">Юридическая информация</div>
+          <h1 className="h1">Публичная оферта</h1>
+          <p className="lead">
+            Договор на оказание услуг по веб-разработке и цифровым инструментам.
           </p>
         </div>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="legal-wrapper reveal">
+        <div className="container narrow">
+          <div className="legal-wrapper">
             <p className="legal-intro">
               Настоящий документ представляет собой официальное предложение ИП Попельнюк Дарьи Сергеевны
               (ОГРНИП 325700000038370, ИНН 701742461419), далее именуемого «Исполнитель», заключить договор
-              на оказание услуг по веб-разработке (вайбкодингу), интеграции AI-решений и IT-консалтингу на
+              на оказание услуг по веб-разработке, созданию Telegram-ботов, AI-ассистентов и мини-приложений на
               изложенных ниже условиях.
             </p>
 

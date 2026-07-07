@@ -2,39 +2,40 @@ import { useEffect, useState, type MouseEvent as ReactMouseEvent, type ReactNode
 import { Link, useLocation, useNavigate, useRouter } from "@tanstack/react-router";
 import { CONTACTS } from "@/lib/contacts";
 
-type NavLink = {
-  to: "/" | "/sites" | "/apps" | "/ai" | "/games" | "/systems" | "/consulting";
-  label: string;
-  exact?: boolean;
-};
+type Path =
+  | "/"
+  | "/sites"
+  | "/bots-ai"
+  | "/mini-apps"
+  | "/cases"
+  | "/articles"
+  | "/contacts";
+
+type NavLink = { to: Path; label: string; exact?: boolean };
 
 const NAV_LINKS: NavLink[] = [
   { to: "/", label: "Главная", exact: true },
   { to: "/sites", label: "Сайты" },
-  { to: "/apps", label: "Приложения" },
-  { to: "/ai", label: "AI-агенты" },
-  { to: "/games", label: "Игры" },
-  { to: "/systems", label: "Системы" },
-  { to: "/consulting", label: "Консалтинг" },
+  { to: "/bots-ai", label: "Боты и AI" },
+  { to: "/mini-apps", label: "Мини-приложения" },
+  { to: "/cases", label: "Кейсы" },
+  { to: "/articles", label: "Статьи" },
 ];
 
-const PRELOAD_ROUTES = [
+const PRELOAD_ROUTES: Path[] = [
   "/",
   "/sites",
-  "/apps",
-  "/ai",
-  "/games",
-  "/systems",
-  "/consulting",
+  "/bots-ai",
+  "/mini-apps",
+  "/cases",
+  "/articles",
   "/contacts",
-  "/oferta",
-  "/privacy",
-] as const;
+];
 
 interface SiteLayoutProps {
   children: ReactNode;
-  /** When true, the nav uses solid background by default (subpages). On the index page it scrolls in. */
-  solidNav?: boolean;
+  /** Accent tint for the whole page: blue (default) / sage / terra / lime. */
+  accent?: "blue" | "sage" | "terra" | "lime";
 }
 
 function scrollPageToTop() {
@@ -43,37 +44,42 @@ function scrollPageToTop() {
   }
 }
 
-export function SiteLayout({ children, solidNav = true }: SiteLayoutProps) {
+function Logo({ onHomeClick }: { onHomeClick: (e: ReactMouseEvent<HTMLAnchorElement>) => void }) {
+  return (
+    <a href="/" className="nav-logo" onClick={onHomeClick} aria-label="Дарья Попельнюк — на главную">
+      <span className="nav-logo-mark">Д</span>
+      <span className="nav-logo-txt">
+        <span className="nav-logo-name">Дарья&nbsp;Попельнюк</span>
+        <span className="nav-logo-role">цифровая мастерская</span>
+      </span>
+    </a>
+  );
+}
+
+export function SiteLayout({ children, accent = "blue" }: SiteLayoutProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobOpen, setMobOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const router = useRouter();
 
-  // Scroll listener (only matters when solidNav=false)
   useEffect(() => {
-    if (solidNav) return;
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [solidNav]);
+  }, []);
 
-  // Preload primary routes right after layout mount so top-nav transitions feel instant.
   useEffect(() => {
     PRELOAD_ROUTES.forEach((to) => {
       void router.preloadRoute({ to });
     });
   }, [router]);
 
-  // Close mobile menu on route change. Scroll-to-top is handled globally in
-  // the root route via useScrollResetOnNavigation, so we don't duplicate it
-  // here — that prevents any race between layout-level and root-level resets.
   useEffect(() => {
     setMobOpen(false);
   }, [location.pathname]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobOpen ? "hidden" : "";
     return () => {
@@ -81,7 +87,6 @@ export function SiteLayout({ children, solidNav = true }: SiteLayoutProps) {
     };
   }, [mobOpen]);
 
-  const navClass = solidNav ? "nav solid" : `nav${scrolled ? " scrolled" : ""}`;
   const forceScrollTop = () => {
     scrollPageToTop();
     if (typeof document !== "undefined") {
@@ -96,14 +101,10 @@ export function SiteLayout({ children, solidNav = true }: SiteLayoutProps) {
       });
     }
   };
-  // Single handler for ALL "Главная" links (top nav, mobile menu, logo, footer).
-  // We use a real <a href="/"> so it looks/behaves like a normal link
-  // (cmd+click opens new tab, etc.) but intercept the plain click and use
-  // TanStack's client-side navigate — that keeps SPA speed AND lets us
-  // reliably reset scroll to the top.
+
+  // Real <a href="/"> for Главная so modifier-clicks open a new tab, but plain
+  // clicks use client-side navigation and reliably reset scroll to top.
   const handleHomeNavClick = (event: ReactMouseEvent<HTMLAnchorElement>) => {
-    // Let modifier-clicks (cmd/ctrl/shift/middle click) fall through to the
-    // browser so they open in a new tab as expected.
     if (
       event.defaultPrevented ||
       event.button !== 0 ||
@@ -121,18 +122,14 @@ export function SiteLayout({ children, solidNav = true }: SiteLayoutProps) {
       return;
     }
     navigate({ to: "/" }).then(forceScrollTop, forceScrollTop);
-    // Belt-and-braces: schedule one more reset on the next frame in case
-    // the new page mounts something that tries to scroll itself.
     requestAnimationFrame(forceScrollTop);
   };
 
   return (
-    <>
-      <nav className={navClass}>
+    <div className={`acc-${accent}`}>
+      <nav className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="container nav-in">
-          <a href="/" className="nav-logo" onClick={handleHomeNavClick}>
-            VI<span>BE</span>
-          </a>
+          <Logo onHomeClick={handleHomeNavClick} />
           <ul className="nav-links">
             {NAV_LINKS.map((l) => (
               <li key={l.to}>
@@ -147,7 +144,7 @@ export function SiteLayout({ children, solidNav = true }: SiteLayoutProps) {
                 ) : (
                   <Link
                     to={l.to}
-                    preload="render"
+                    preload="intent"
                     activeProps={{ className: "active" }}
                     activeOptions={l.exact ? { exact: true } : undefined}
                   >
@@ -157,14 +154,15 @@ export function SiteLayout({ children, solidNav = true }: SiteLayoutProps) {
               </li>
             ))}
             <li>
-              <Link to="/contacts" preload="render" className="nav-cta">
-                Написать
+              <Link to="/contacts" preload="intent" className="nav-cta">
+                Обсудить проект
               </Link>
             </li>
           </ul>
           <button
             className={`burger${mobOpen ? " open" : ""}`}
             aria-label="Меню"
+            aria-expanded={mobOpen}
             onClick={() => setMobOpen((v) => !v)}
           >
             <span></span>
@@ -186,43 +184,55 @@ export function SiteLayout({ children, solidNav = true }: SiteLayoutProps) {
               {l.label}
             </a>
           ) : (
-            <Link key={l.to} to={l.to} preload="render">
+            <Link key={l.to} to={l.to} preload="intent" activeProps={{ className: "active" }}>
               {l.label}
             </Link>
           ),
         )}
-        <Link to="/contacts" preload="render">Контакты</Link>
+        <Link to="/contacts" preload="intent" className="btn btn-primary btn-lg">
+          Обсудить проект
+        </Link>
       </div>
 
       {children}
 
       <footer className="footer">
         <div className="container">
-          <div className="footer-in">
-            <div className="footer-left">
-              © 2025 <a href="/" onClick={handleHomeNavClick}>VIBE</a> — Вайбкодинг для бизнеса
+          <div className="footer-top">
+            <div className="footer-brand">
+              <Logo onHomeClick={handleHomeNavClick} />
+              <p>
+                Личная цифровая мастерская. Вижу задачу бизнеса — и собираю под неё рабочий
+                инструмент: сайт, бот, AI-ассистента или мини-приложение.
+              </p>
             </div>
-            <div className="footer-links">
-              <a href={CONTACTS.telegram} target="_blank" rel="noopener noreferrer">
-                Telegram
-              </a>
-              <a href={CONTACTS.whatsapp} target="_blank" rel="noopener noreferrer">
-                WhatsApp
-              </a>
-              <a href={CONTACTS.max} target="_blank" rel="noopener noreferrer">
-                MAX
-              </a>
+            <div className="footer-col">
+              <h5>Что делаю</h5>
+              <Link to="/sites">Сайты</Link>
+              <Link to="/bots-ai">Боты и AI</Link>
+              <Link to="/mini-apps">Мини-приложения</Link>
+              <Link to="/cases">Кейсы</Link>
+              <Link to="/articles">Статьи</Link>
+            </div>
+            <div className="footer-col">
+              <h5>Связаться</h5>
+              <a href={CONTACTS.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a href={CONTACTS.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a href={CONTACTS.max} target="_blank" rel="noopener noreferrer">MAX</a>
+              <Link to="/contacts">Все контакты</Link>
             </div>
           </div>
           <div className="footer-legal">
+            <span>© 2026 Дарья Попельнюк</span>
+            <span className="sep">·</span>
             ИП Попельнюк Дарья Сергеевна, ОГРНИП 325700000038370, ИНН 701742461419
-            <span className="footer-legal-sep">·</span>
-            <Link to="/oferta" preload="render">Договор оферты</Link>
-            <span className="footer-legal-sep">·</span>
-            <Link to="/privacy" preload="render">Политика конфиденциальности</Link>
+            <span className="sep">·</span>
+            <Link to="/oferta">Оферта</Link>
+            <span className="sep">·</span>
+            <Link to="/privacy">Конфиденциальность</Link>
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

@@ -1,0 +1,1 @@
+import{r,j as s}from"./index-Dae-SsJq.js";function i({question:e,children:a}){const[t,n]=r.useState(!1);return s.jsxs("div",{className:`faq-item${t?" open":""}`,children:[s.jsx("button",{className:"faq-q",onClick:()=>n(o=>!o),children:e}),s.jsx("div",{className:"faq-a",children:a})]})}export{i as F};

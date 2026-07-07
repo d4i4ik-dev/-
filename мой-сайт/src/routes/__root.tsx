@@ -51,21 +51,12 @@ function useScrollResetOnNavigation() {
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+    <div className="notfound">
+      <div>
+        <div className="notfound-code">404</div>
+        <h2>Страница не найдена</h2>
+        <p>Возможно, она была перемещена или её никогда не существовало.</p>
+        <Link to="/" className="btn btn-primary">На главную</Link>
       </div>
     </div>
   );
@@ -76,26 +67,25 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "VIBE — Вайбкодинг для бизнеса | Сайты, приложения, AI-агенты" },
-      { name: "description", content: "Умные веб-решения для вашего бизнеса. Сайты, приложения, AI-агенты, автоматизация. 7+ лет в бизнесе, 200+ проектов." },
-      { name: "author", content: "VIBE" },
-      { property: "og:title", content: "VIBE — Вайбкодинг для бизнеса | Сайты, приложения, AI-агенты" },
-      { property: "og:description", content: "Умные веб-решения для вашего бизнеса. Сайты, приложения, AI-агенты, автоматизация. 7+ лет в бизнесе, 200+ проектов." },
+      { title: "Дарья Попельнюк — сайты, боты и AI-инструменты для бизнеса" },
+      { name: "description", content: "Проектирую и собираю цифровые инструменты под задачу бизнеса: лендинги, каталоги, Telegram-боты, AI-ассистентов и мини-приложения. Сначала разбираемся, что нужно, — потом делаю." },
+      { name: "author", content: "Дарья Попельнюк" },
+      { property: "og:title", content: "Дарья Попельнюк — сайты, боты и AI-инструменты для бизнеса" },
+      { property: "og:description", content: "Проектирую и собираю цифровые инструменты под задачу бизнеса: лендинги, каталоги, Telegram-боты, AI-ассистентов и мини-приложения." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://biznes-na-ai.ru/" },
+      { property: "og:site_name", content: "Дарья Попельнюк — цифровая мастерская" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "VIBE — Вайбкодинг для бизнеса | Сайты, приложения, AI-агенты" },
-      { name: "twitter:description", content: "Умные веб-решения для вашего бизнеса. Сайты, приложения, AI-агенты, автоматизация. 7+ лет в бизнесе, 200+ проектов." },
-      { property: "og:image", content: "https://biznes-na-ai.ru/og-image.png" },
-      { name: "twitter:image", content: "https://biznes-na-ai.ru/og-image.png" },
+      { name: "twitter:title", content: "Дарья Попельнюк — сайты, боты и AI-инструменты для бизнеса" },
+      { name: "twitter:description", content: "Проектирую и собираю цифровые инструменты под задачу бизнеса: лендинги, каталоги, Telegram-боты, AI-ассистентов и мини-приложения." },
+      { property: "og:image", content: "http://biznes-na-ai.ru/og-image.png" },
+      { name: "twitter:image", content: "http://biznes-na-ai.ru/og-image.png" },
     ],
     links: [
-      { rel: "canonical", href: "https://biznes-na-ai.ru/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700&family=Onest:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
       { rel: "stylesheet", href: appCss },
     ],
@@ -107,7 +97,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <HeadContent />
       </head>

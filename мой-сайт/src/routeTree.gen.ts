@@ -9,22 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SystemsRouteImport } from './routes/systems'
 import { Route as SitesRouteImport } from './routes/sites'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OfertaRouteImport } from './routes/oferta'
-import { Route as GamesRouteImport } from './routes/games'
+import { Route as MiniAppsRouteImport } from './routes/mini-apps'
 import { Route as ContactsRouteImport } from './routes/contacts'
-import { Route as ConsultingRouteImport } from './routes/consulting'
-import { Route as AppsRouteImport } from './routes/apps'
-import { Route as AiRouteImport } from './routes/ai'
+import { Route as CasesRouteImport } from './routes/cases'
+import { Route as BotsAiRouteImport } from './routes/bots-ai'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArticlesIndexRouteImport } from './routes/articles/index'
+import { Route as ArticlesSlugRouteImport } from './routes/articles/$slug'
 
-const SystemsRoute = SystemsRouteImport.update({
-  id: '/systems',
-  path: '/systems',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitesRoute = SitesRouteImport.update({
   id: '/sites',
   path: '/sites',
@@ -40,9 +35,9 @@ const OfertaRoute = OfertaRouteImport.update({
   path: '/oferta',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GamesRoute = GamesRouteImport.update({
-  id: '/games',
-  path: '/games',
+const MiniAppsRoute = MiniAppsRouteImport.update({
+  id: '/mini-apps',
+  path: '/mini-apps',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactsRoute = ContactsRouteImport.update({
@@ -50,19 +45,14 @@ const ContactsRoute = ContactsRouteImport.update({
   path: '/contacts',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ConsultingRoute = ConsultingRouteImport.update({
-  id: '/consulting',
-  path: '/consulting',
+const CasesRoute = CasesRouteImport.update({
+  id: '/cases',
+  path: '/cases',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppsRoute = AppsRouteImport.update({
-  id: '/apps',
-  path: '/apps',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AiRoute = AiRouteImport.update({
-  id: '/ai',
-  path: '/ai',
+const BotsAiRoute = BotsAiRouteImport.update({
+  id: '/bots-ai',
+  path: '/bots-ai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -70,105 +60,108 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArticlesIndexRoute = ArticlesIndexRouteImport.update({
+  id: '/articles/',
+  path: '/articles/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
+  id: '/articles/$slug',
+  path: '/articles/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/ai': typeof AiRoute
-  '/apps': typeof AppsRoute
-  '/consulting': typeof ConsultingRoute
+  '/bots-ai': typeof BotsAiRoute
+  '/cases': typeof CasesRoute
   '/contacts': typeof ContactsRoute
-  '/games': typeof GamesRoute
+  '/mini-apps': typeof MiniAppsRoute
   '/oferta': typeof OfertaRoute
   '/privacy': typeof PrivacyRoute
   '/sites': typeof SitesRoute
-  '/systems': typeof SystemsRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
+  '/articles/': typeof ArticlesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/ai': typeof AiRoute
-  '/apps': typeof AppsRoute
-  '/consulting': typeof ConsultingRoute
+  '/bots-ai': typeof BotsAiRoute
+  '/cases': typeof CasesRoute
   '/contacts': typeof ContactsRoute
-  '/games': typeof GamesRoute
+  '/mini-apps': typeof MiniAppsRoute
   '/oferta': typeof OfertaRoute
   '/privacy': typeof PrivacyRoute
   '/sites': typeof SitesRoute
-  '/systems': typeof SystemsRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
+  '/articles': typeof ArticlesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/ai': typeof AiRoute
-  '/apps': typeof AppsRoute
-  '/consulting': typeof ConsultingRoute
+  '/bots-ai': typeof BotsAiRoute
+  '/cases': typeof CasesRoute
   '/contacts': typeof ContactsRoute
-  '/games': typeof GamesRoute
+  '/mini-apps': typeof MiniAppsRoute
   '/oferta': typeof OfertaRoute
   '/privacy': typeof PrivacyRoute
   '/sites': typeof SitesRoute
-  '/systems': typeof SystemsRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
+  '/articles/': typeof ArticlesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/ai'
-    | '/apps'
-    | '/consulting'
+    | '/bots-ai'
+    | '/cases'
     | '/contacts'
-    | '/games'
+    | '/mini-apps'
     | '/oferta'
     | '/privacy'
     | '/sites'
-    | '/systems'
+    | '/articles/$slug'
+    | '/articles/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/ai'
-    | '/apps'
-    | '/consulting'
+    | '/bots-ai'
+    | '/cases'
     | '/contacts'
-    | '/games'
+    | '/mini-apps'
     | '/oferta'
     | '/privacy'
     | '/sites'
-    | '/systems'
+    | '/articles/$slug'
+    | '/articles'
   id:
     | '__root__'
     | '/'
-    | '/ai'
-    | '/apps'
-    | '/consulting'
+    | '/bots-ai'
+    | '/cases'
     | '/contacts'
-    | '/games'
+    | '/mini-apps'
     | '/oferta'
     | '/privacy'
     | '/sites'
-    | '/systems'
+    | '/articles/$slug'
+    | '/articles/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AiRoute: typeof AiRoute
-  AppsRoute: typeof AppsRoute
-  ConsultingRoute: typeof ConsultingRoute
+  BotsAiRoute: typeof BotsAiRoute
+  CasesRoute: typeof CasesRoute
   ContactsRoute: typeof ContactsRoute
-  GamesRoute: typeof GamesRoute
+  MiniAppsRoute: typeof MiniAppsRoute
   OfertaRoute: typeof OfertaRoute
   PrivacyRoute: typeof PrivacyRoute
   SitesRoute: typeof SitesRoute
-  SystemsRoute: typeof SystemsRoute
+  ArticlesSlugRoute: typeof ArticlesSlugRoute
+  ArticlesIndexRoute: typeof ArticlesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/systems': {
-      id: '/systems'
-      path: '/systems'
-      fullPath: '/systems'
-      preLoaderRoute: typeof SystemsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sites': {
       id: '/sites'
       path: '/sites'
@@ -190,11 +183,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfertaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/games': {
-      id: '/games'
-      path: '/games'
-      fullPath: '/games'
-      preLoaderRoute: typeof GamesRouteImport
+    '/mini-apps': {
+      id: '/mini-apps'
+      path: '/mini-apps'
+      fullPath: '/mini-apps'
+      preLoaderRoute: typeof MiniAppsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contacts': {
@@ -204,25 +197,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/consulting': {
-      id: '/consulting'
-      path: '/consulting'
-      fullPath: '/consulting'
-      preLoaderRoute: typeof ConsultingRouteImport
+    '/cases': {
+      id: '/cases'
+      path: '/cases'
+      fullPath: '/cases'
+      preLoaderRoute: typeof CasesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/apps': {
-      id: '/apps'
-      path: '/apps'
-      fullPath: '/apps'
-      preLoaderRoute: typeof AppsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai': {
-      id: '/ai'
-      path: '/ai'
-      fullPath: '/ai'
-      preLoaderRoute: typeof AiRouteImport
+    '/bots-ai': {
+      id: '/bots-ai'
+      path: '/bots-ai'
+      fullPath: '/bots-ai'
+      preLoaderRoute: typeof BotsAiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -232,20 +218,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/articles/': {
+      id: '/articles/'
+      path: '/articles'
+      fullPath: '/articles/'
+      preLoaderRoute: typeof ArticlesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/articles/$slug': {
+      id: '/articles/$slug'
+      path: '/articles/$slug'
+      fullPath: '/articles/$slug'
+      preLoaderRoute: typeof ArticlesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AiRoute: AiRoute,
-  AppsRoute: AppsRoute,
-  ConsultingRoute: ConsultingRoute,
+  BotsAiRoute: BotsAiRoute,
+  CasesRoute: CasesRoute,
   ContactsRoute: ContactsRoute,
-  GamesRoute: GamesRoute,
+  MiniAppsRoute: MiniAppsRoute,
   OfertaRoute: OfertaRoute,
   PrivacyRoute: PrivacyRoute,
   SitesRoute: SitesRoute,
-  SystemsRoute: SystemsRoute,
+  ArticlesSlugRoute: ArticlesSlugRoute,
+  ArticlesIndexRoute: ArticlesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
